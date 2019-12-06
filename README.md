@@ -52,6 +52,6 @@ to your `.eslintrc`:
 or `.eslintrc.js`:
 ```js
 module.exports = {
-  "extends": "eslint-config-ns",
+  "extends": "eslint-config-jaxcs",
 }
 ```
