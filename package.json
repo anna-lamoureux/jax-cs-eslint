@@ -8,7 +8,9 @@
     "airbnb-base",
     "typescript",
     "javascript",
-    "prettier"
+    "prettier",
+    "angular",
+    "tslint"
   ],
   "author": "Anna Lamoureux <anna.lamoureux@jax.org>",
   "repository": {
