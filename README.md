@@ -1,4 +1,4 @@
-# jax-cs-eslint
+# eslint-config-jaxcs
 
 A custom linting configuration for Angular projects to increase code style consistency across projects
 
