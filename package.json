@@ -1,0 +1,47 @@
+{
+  "name": "eslit-config-jaxcs",
+  "version": "1.0.0",
+  "description": "A custom linting configuration for JAX CS Angular projects to increase code style consistency across projects",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "airbnb-base",
+    "typescript",
+    "javascript",
+    "prettier"
+  ],
+  "author": "Anna Lamoureux <anna.lamoureux@jax.org>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anna-lamoureux/jax-cs-eslint.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "index.js", "prettier.js", "prettier-config.js"
+  ],
+  "peerDependencies": {
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.0",
+    "typescript": "~3.4.5"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.0",
+    "typescript": "~3.4.5"
+  }
+}
