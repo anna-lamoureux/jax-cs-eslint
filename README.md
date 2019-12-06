@@ -5,7 +5,7 @@ A custom linting configuration for Angular projects to increase code style consi
 ## Features
 * based on the [Airbnb JS Style Guide](https://github.com/airbnb/javascript), using the 
 [base package](https://www.npmjs.com/package/eslint-config-airbnb-base)
-* adds prettier support to include linting for HTML and CSS files
+* adds [Prettier](https://prettier.io/) support to include linting for HTML and CSS files
 * uses the [typescript-eslint toolkit](https://github.com/typescript-eslint/typescript-eslint) to apply 
 eslint rules to TS files
 * adds a couple of extra custom rules
