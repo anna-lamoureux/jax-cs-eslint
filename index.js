@@ -5,10 +5,10 @@ module.exports = {
     "jasmine": true
   },
   "extends": [
-    "airbnb-base",
-    "plugin:@typescript-eslint/recommended",  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    "prettier/@typescript-eslint",  // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    "plugin:prettier/recommended",  // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    "airbnb-base", // base set of rules
+    "plugin:@typescript-eslint/recommended",  // uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint",  // uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended",  // enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -83,6 +83,7 @@ module.exports = {
     "id-blacklist": "off",
     "id-match": "off",
     "import/no-deprecated": "warn",
+    "import/extensions": "off", // extensions in imports aren't necessary in most cases; if there are issues, runtime/compilation will find them
     "import/no-unresolved": "off", // turns off the unresolved error as unresolved imports should become apparent at runtime
     "import/prefer-default-export": "off",
     "max-classes-per-file": "warn", // sometimes this rule is okay to break, especially if classes are small and/or closely related
@@ -99,7 +100,7 @@ module.exports = {
     "no-empty": "off",
     "no-eval": "error",
     "no-fallthrough": "error",
-    "no-lonely-if": "off", // this rule appears to be a bit buggy
+    "no-lonely-if": "off", // this rule appears to be a bit buggy; turning it off for now
     "no-new-wrappers": "error",
     "no-param-reassign": "off", // the fixes for this rule created redundant code statements
     "no-shadow": [
@@ -115,11 +116,11 @@ module.exports = {
     "no-unused-expressions": [
       "error",
       {
-        "allowTernary": true // expressions are flagged even though they're being used to determine boolean value
+        "allowTernary": true // expressions in ternary statements were flagged even though they're being used to determine boolean value
       }
     ],
     "no-unused-labels": "error",
-    "no-useless-constructor": "off", // turn off the ESLint version of this rule
+    "no-useless-constructor": "off", // turns off the ESLint version of this rule
     "no-var": "error",
     "prefer-const": "error",
     "prefer-destructuring": "off", // this doesn't seem to be that helpful in most cases that it's flagged code
