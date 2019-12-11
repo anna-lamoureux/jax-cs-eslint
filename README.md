@@ -64,19 +64,19 @@ little easier, adding custom command scripts to your `package.json`. Here are so
   "scripts": {
     "lint": "eslint . -f table --ext .ts; exit 0",
     "lint-e2e": "eslint ./e2e -f table --ext .ts; exit 0",
-    "lint-app": "eslint ./src -f table --ext .ts,.html; exit 0",
+    "lint-app": "eslint ./src -f table --ext .ts; exit 0",
     "lint-preview": "npm run lint-preview-e2e; npm run lint-preview-app",
     "lint-preview-e2e": "prettier -c './e2e/**/*.{ts,js,css,html}'; exit 0",
     "lint-preview-app": "prettier -c './src/**/*.{ts,js,css,html}'; exit 0",
     "fix-prettier": "npm run fix-prettier-e2e; npm run fix-prettier-app",
     "fix-prettier-e2e": "prettier --write './e2e/**/*.{ts,js,css,html}'; exit 0",
-    "fix-prettier-app": "prettier --write './app/**/*.{ts,js,css,html}'; exit 0",
+    "fix-prettier-app": "prettier --write './src/**/*.{ts,js,css,html}'; exit 0",
     "fix-eslint": "npm run fix-eslint-e2e; npm run fix-eslint-app",
     "fix-eslint-e2e": "eslint ./e2e -f table --ext .ts --fix; exit 0",
-    "fix-eslint-app": "eslint ./src -f table --ext .ts,.html --fix; exit 0",
+    "fix-eslint-app": "eslint ./src -f table --ext .ts --fix; exit 0",
     "fix": "npm run fix-prettier; npm run fix-eslint",
     "fix-app": "npm run fix-prettier-app; npm run fix-eslint-app",
-    "fix-e2e": "npm run fix-prettier-e2e; npm run fix-eslint-e2e"
+    "fix-e2e": "npm run fix-prettier-e2e; npm run fix-eslint-e2e",
   }
 }
 ```

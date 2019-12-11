@@ -20,10 +20,12 @@ module.exports = {
     "@typescript-eslint/tslint",
   ],
   "rules": {
-    "import/no-unresolved": "off", // turns off the unresolved error as unresolved imports should become apparent at runtime
-    "import/prefer-default-export": "off",
-    "class-methods-use-this": "warn", // warns when a method doesn't reference the class object to get data
-    "@typescript-eslint/no-explicit-any": "off", // allows the 'any' type
+    "@typescript-eslint/camelcase": [
+      "error",
+      {
+        "properties": "never" // allow dictionary properties that may interface with python-based APIs
+      },
+    ],
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/consistent-type-definitions": "error",
     "@typescript-eslint/explicit-member-accessibility": [
@@ -48,10 +50,12 @@ module.exports = {
     "@typescript-eslint/member-ordering": "error",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-explicit-any": "off", // allows the 'any' type
     "@typescript-eslint/no-inferrable-types": "error",
     "@typescript-eslint/no-misused-new": "error",
-    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-useless-constructor": "error", // use this version of the rule since it makes accommodations for typescript
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/quotes": [
       "error",
@@ -64,8 +68,9 @@ module.exports = {
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unified-signatures": "error",
     "arrow-body-style": "error",
-    "camelcase": "off",
+    "camelcase": "off", // turn off this ESLint rule to use the typescript version (above)
     "capitalized-comments": "error",
+    "class-methods-use-this": "warn", // warns when a method doesn't reference the class object to get data
     "constructor-super": "error",
     "curly": "error",
     "dot-notation": "warn",
@@ -78,6 +83,9 @@ module.exports = {
     "id-blacklist": "off",
     "id-match": "off",
     "import/no-deprecated": "warn",
+    "import/no-unresolved": "off", // turns off the unresolved error as unresolved imports should become apparent at runtime
+    "import/prefer-default-export": "off",
+    "max-classes-per-file": "warn", // sometimes this rule is okay to break, especially if classes are small and/or closely related
     "max-len": [
       "error",
       {
@@ -86,37 +94,14 @@ module.exports = {
     ],
     "no-bitwise": "error",
     "no-caller": "error",
-    "no-console": [
-      "error",
-      {
-        "allow": [
-          "log",
-          "warn",
-          "dir",
-          "timeLog",
-          "assert",
-          "clear",
-          "count",
-          "countReset",
-          "group",
-          "groupEnd",
-          "table",
-          "dirxml",
-          "error",
-          "groupCollapsed",
-          "Console",
-          "profile",
-          "profileEnd",
-          "timeStamp",
-          "context"
-        ]
-      }
-    ],
+    "no-console": "error",
     "no-debugger": "error",
     "no-empty": "off",
     "no-eval": "error",
     "no-fallthrough": "error",
+    "no-lonely-if": "off", // this rule appears to be a bit buggy
     "no-new-wrappers": "error",
+    "no-param-reassign": "off", // the fixes for this rule created redundant code statements
     "no-shadow": [
       "error",
       {
@@ -127,10 +112,17 @@ module.exports = {
     "no-trailing-spaces": "error",
     "no-undef-init": "error",
     "no-underscore-dangle": "error",
-    "no-unused-expressions": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true // expressions are flagged even though they're being used to determine boolean value
+      }
+    ],
     "no-unused-labels": "error",
+    "no-useless-constructor": "off", // turn off the ESLint version of this rule
     "no-var": "error",
     "prefer-const": "error",
+    "prefer-destructuring": "off", // this doesn't seem to be that helpful in most cases that it's flagged code
     "radix": "error",
     "spaced-comment": "error",
     "@typescript-eslint/tslint/config": [
@@ -163,11 +155,10 @@ module.exports = {
     "prettier/prettier": [
       "error",
       {
-        semi:  true,
-        trailingComma:  'all',
-        singleQuote:  true,
-        printWidth:  120,
-        tabWidth:  2,
+        trailingComma: 'all',
+        singleQuote: true,
+        printWidth: 120,
+        tabWidth: 2,
         bracketSpacing: true,
         endOfLine: "lf"
       }
