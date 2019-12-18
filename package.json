@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jaxcs",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A custom linting configuration for JAX CS Angular projects to increase code style consistency across projects",
   "keywords": [
     "eslint",
