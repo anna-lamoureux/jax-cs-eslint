@@ -90,7 +90,10 @@ module.exports = {
     "max-len": [
       "error",
       {
-        "code": 120
+        "code": 100,
+        "ignoreTemplateLiterals": true,
+        "ignoreStrings": true,
+        "ignoreUrls": true
       }
     ],
     "no-bitwise": "error",
@@ -158,7 +161,7 @@ module.exports = {
       {
         trailingComma: 'all',
         singleQuote: true,
-        printWidth: 120,
+        printWidth: 100,
         tabWidth: 2,
         bracketSpacing: true,
         endOfLine: "lf"
